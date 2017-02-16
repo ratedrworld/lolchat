@@ -82,10 +82,10 @@ client.on('stanza', function (stanza) {
         from: stanza.attrs.to,
         type: 'chat'
       })
-      reply.c('body').t('I can echo' + message);
+      reply.c('body').t('I can echo ' + message);
       setTimeout(function () {
         client.send(reply)
-      }, 321)
+      }, 1000)
     }
   }
 })
