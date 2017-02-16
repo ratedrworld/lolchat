@@ -74,14 +74,14 @@ process.on('exit', function () {
 
 client.on('stanza', function (stanza) {
   if (stanza.is('message') && stanza.attrs.type === 'chat') {
-    var i = parseInt(stanza.getChildText('body'), 10)
+    var message = stanza.getChildText('body');
     console.log(stanza.getChildText('body'));
     var reply = new Client.Stanza('message', {
       to: stanza.attrs.from,
       from: stanza.attrs.to,
       type: 'chat'
     })
-    reply.c('body').t(isNaN(i) ? 'i can count!' : ('' + (i + 1)))
+    reply.c('body').t('I can echo' + message);
     setTimeout(function () {
       client.send(reply)
     }, 321)
