@@ -43,9 +43,54 @@ var client = new Client({
   legacySSL : true
 })
 
+client.on('online', function () {
+  console.log('Client is online')
+  client.send('<presence/>')
+})
+
+client.on('offline', function () {
+  console.log('Client is offline')
+})
+
+client.on('connect', function () {
+  console.log('Client is connected')
+})
+
+client.on('reconnect', function () {
+  console.log('Client reconnects …')
+})
+
+client.on('disconnect', function (e) {
+  console.log('Client is disconnected', client.connection.reconnect, e)
+})
+
+client.on('error', function (e) {
+  console.error(e)
+  process.exit(1)
+})
+
+process.on('exit', function () {
+  client.end()
+})
+
 client.on('stanza', function (stanza) {
-  console.log('Received stanza: ', JSON.stringify(parseString(stanza)));
-});
+  if (stanza.is('message') && stanza.attrs.type === 'chat') {
+    var i = parseInt(stanza.getChildText('body'), 10)
+    x = i
+    console.log(i);
+    var reply = new Client.Stanza('message', {
+      to: stanza.attrs.from,
+      from: stanza.attrs.to,
+      type: 'chat'
+    })
+    reply.c('body').t(isNaN(i) ? 'i can count!' : ('' + (i + 1)))
+    setTimeout(function () {
+      client.send(reply)
+    }, 321)
+  }
+})
+
+
 
 
 
