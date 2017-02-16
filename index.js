@@ -4,7 +4,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 const Client = require('node-xmpp-client');
-const parseString = require('xml2js').parseString;
 
 
 
