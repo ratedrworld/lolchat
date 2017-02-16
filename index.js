@@ -4,6 +4,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
 const Client = require('node-xmpp-client');
+const parseString = require('xml2js').parseString;
+
+
 
 const envOptions = {
   lolId : process.env.LOL_ID + "@pvp.net/xiff",
@@ -41,7 +44,7 @@ var client = new Client({
 })
 
 client.on('stanza', function (stanza) {
-  console.log('Received stanza: ', stanza.toString());
+  console.log('Received stanza: ', JSON.stringify(parseString(stanza)));
 });
 
 
