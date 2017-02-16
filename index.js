@@ -75,7 +75,7 @@ process.on('exit', function () {
 client.on('stanza', function (stanza) {
   if (stanza.is('message') && stanza.attrs.type === 'chat') {
     var i = parseInt(stanza.getChildText('body'), 10)
-    console.log(i);
+    console.log(stanza.getChildText('body'));
     var reply = new Client.Stanza('message', {
       to: stanza.attrs.from,
       from: stanza.attrs.to,
