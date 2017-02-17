@@ -15,8 +15,10 @@ lolchat isn’t endorsed by Riot Games and doesn’t reflect the views or opinio
     * got to depoy and chose github
     * chose your forked repo
     * go to app settings and set configvars (`LOL_ID`, `LOL_PASSWORD`, `LOL_PORT`, `LOL_SERVER`) as shown in [here](http://forums.euw.leagueoflegends.com/board/showthread.php?t=613311)
+    
     ###### Or just deploy it any way you find it convenient.
-* ### USAGE
+    
+    ###  USAGE
     After creating an lol account and deploying you should be able to text your bot
     anything with him replying "I can echo: `your message`"
 
