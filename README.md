@@ -25,5 +25,5 @@ lolchat isn’t endorsed by Riot Games and doesn’t reflect the views or opinio
 
 #### For any kind of feedback feel free to use the issues tab.
 
-#### [MIT LICENSE](https://opensource.org/licenses/MIT) 
+#### [MIT LICENSE](LICENSE) 
 Copyright 2017 Suciu Sergiu
