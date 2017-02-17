@@ -23,7 +23,7 @@ lolchat isn’t endorsed by Riot Games and doesn’t reflect the views or opinio
     anything with him replying "I can echo: `your message`"
 
 
-
+#### For any kind of feedback feel free to use the issues tab.
 
 #### [MIT LICENSE](https://opensource.org/licenses/MIT) 
 Copyright 2017 Suciu Sergiu
